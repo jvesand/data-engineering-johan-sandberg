@@ -1,0 +1,19 @@
+services:
+  python: # arbitrary name? appened to repo name?
+    # image: imageName # instead of this, FROM in dockerfile
+    build: .
+    ports:
+      - "8050:8050"
+    container_name: lecture2
+
+    # named volume to make it persist
+    # volumes:
+      # - dice_simulator:/app/src/
+
+    # bind mount
+    volumes:
+      # -hostPath:containerPath
+      - ./src:/app/src
+
+# volumes:
+  # dice_simulator:
